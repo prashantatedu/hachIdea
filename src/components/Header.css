@@ -1,0 +1,12 @@
+.header-container {
+  width: 100%;
+  background-color: steelblue;
+  font-size: 2rem;
+}
+
+.toolName {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}

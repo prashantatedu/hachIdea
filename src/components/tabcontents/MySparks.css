@@ -1,0 +1,40 @@
+.my-ideas-tab {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid #000;
+  border-radius: 2rem;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.idea-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.ideas-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.myidea-header {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add-idea-btn {
+  font-size: 2rem;
+  color: blue;
+}

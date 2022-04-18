@@ -1,0 +1,30 @@
+.login-btn {
+  width: 50rem;
+  height: 5rem;
+  background-color: #cccccc;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn button {
+  width: 5rem;
+  height: 2rem;
+  background-color: blue;
+  color: white;
+}
+
+.login-btn button:hover {
+  width: 5rem;
+  height: 2rem;
+  background-color: rgba(0, 0, 255, 0.3);
+  color: white;
+}
+
+.input-id {
+  min-width: 10rem;
+  max-width: 20rem;
+  height: 2rem;
+  margin-right: 0.51rem;
+}

@@ -1,0 +1,106 @@
+.idea-display-container {
+  width: 25rem;
+  height: 16rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.2rem;
+}
+
+.idea-contents {
+  width: 40rem;
+  height: 15rem;
+  border: 0.1rem solid #000000;
+  border-radius: 2rem;
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.idea-header {
+  width: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.idea-details {
+  width: 90%;
+  height: 90%;
+  /* border: 0.1rem solid #000000; */
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title-details {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.title-detail {
+  width: 22%;
+  font-weight: 900;
+  display: inline-block;
+}
+.title-content {
+  width: 75%;
+  display: inline-block;
+}
+
+.desc-details {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 0.2rem;
+}
+
+.desc-detail {
+  width: 23%;
+  display: inline-block;
+  font-weight: 900;
+}
+.desc-content {
+  width: 75%;
+  display: inline-block;
+}
+
+.date-and-vote {
+  width: 90%;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-details {
+  font-size: 1rem;
+}
+.date-details span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.vote-details {
+  font-size: 1.5rem;
+}
+.vote-details span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.vote-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.vote-btn-voted {
+  color: steelblue;
+}
