@@ -2,8 +2,8 @@
   "emplids": ["A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08"],
   "ideas": [
     {
-      "voteCount": 3,
       "id": 1,
+      "voteCount": 3,
       "owner": "A01",
       "title": "React Render with class component ",
       "description": "Render react using props and constructors",
@@ -13,53 +13,13 @@
     },
     {
       "id": 2,
-      "owner": "A01",
+      "owner": "A02",
       "title": "React Render with class component ",
       "description": "Render react using props and constructors",
       "tag": "tech",
       "voteCount": 0,
       "createDate": "2022-05-03",
-      "votedUsers": []
-    },
-    {
-      "id": 3,
-      "owner": "A03",
-      "title": "Javascript without console.log ",
-      "description": "Javascript testing without console.log",
-      "tag": "tech",
-      "voteCount": 4,
-      "createDate": "2022-03-02",
       "votedUsers": ["A01"]
-    },
-    {
-      "id": 4,
-      "owner": "A02",
-      "title": "Hooks and Functional components ",
-      "description": "Hooks to implement lifecycle methods in functional components",
-      "tag": "tech",
-      "voteCount": 2,
-      "createDate": "2022-01-02",
-      "votedUsers": ["A01"]
-    },
-    {
-      "owner": "A01",
-      "title": "sas",
-      "description": "sasas",
-      "tag": "feature",
-      "voteCount": 0,
-      "createDate": "2022-08-17",
-      "id": 5,
-      "votedUsers": []
-    },
-    {
-      "owner": "A01",
-      "title": "Hello",
-      "description": "Hello Hello",
-      "tag": "tech",
-      "voteCount": 0,
-      "createDate": "2022-05-17",
-      "id": 6,
-      "votedUsers": []
     }
   ]
 }
