@@ -15,26 +15,21 @@ const MySparks = () => {
   }, []);
 
   const addIdea = () => {
-    console.log("clicked");
     setIsAddNewIdea(true);
   };
 
   const closeIdea = () => {
-    console.log("clicked");
     setIsAddNewIdea(false);
   };
 
   const getUserDetails = () => {
     const url = `http://localhost:3004/ideas?owner=${appContext.userDetails.userid}`;
-    console.log({ url });
     axios.get(url).then((res) => {
       let result = res.data;
-      console.log({ result });
       setLoading(false);
       if (Array.isArray(result) && !result.length) {
         console.log("no data");
       } else {
-        console.log({ result });
         appContext.tfDispatch({ type: "UPDATEUSERIDEA", userIdeas: result });
       }
     });
@@ -42,7 +37,6 @@ const MySparks = () => {
 
   const renderIdeas = () => {
     let myIdeas = [...appContext.userDetails.userIdeas];
-    console.log({ myIdeas });
     if (Array.isArray(myIdeas) && !myIdeas.length) {
       return <div>No Ideas to Display</div>;
     } else {

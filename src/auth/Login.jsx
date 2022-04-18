@@ -9,7 +9,6 @@ const Login = () => {
   let userContext = useContext(AppContext);
 
   const handleLogin = () => {
-    console.log("login clicked");
     let userIds = [];
 
     axios.get("http://localhost:3004/emplids").then((res) => {
@@ -17,7 +16,6 @@ const Login = () => {
         let details = res.data;
         userIds = [...details];
         let idFound = userIds.indexOf(userid);
-        console.log({ idFound });
         if (idFound === -1) {
           setUseridError(true);
         } else {

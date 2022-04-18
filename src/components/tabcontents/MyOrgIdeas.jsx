@@ -29,18 +29,14 @@ const MyOrgIdeas = () => {
   }, []);
 
   const getAllUserIdeas = () => {
-    console.log("getAllUserIdeas");
     const url = `http://localhost:3004/ideas`;
-    console.log({ url });
     axios.get(url).then((res) => {
       let result = res.data;
-      console.log({ result });
       setLoading(false);
 
       if (Array.isArray(result) && !result.length) {
         console.log("no data");
       } else {
-        console.log({ result });
         setAllUserIdeas([...result]);
       }
       sortByVotes();
@@ -48,37 +44,29 @@ const MyOrgIdeas = () => {
       setUserIdeasByVoteCount(usersByVoteCall);
       setUserIdeasByCreateDate(usersByDate);
     });
-    console.log({ usersByVoteCall });
   };
 
   const getUserDetails = () => {
     const url = `http://localhost:3004/ideas?_start=${startCount}&_limit=${limitRecords}`;
-    console.log({ url });
     axios.get(url).then((res) => {
       let result = res.data;
-      console.log({ result });
       setLoading(false);
       if (Array.isArray(result) && !result.length) {
         console.log("no data");
       } else {
-        console.log({ result });
         appContext.tfDispatch({ type: "UPDATEORGIDEA", orgIdeas: result });
       }
     });
   };
 
   const sortByVotes = () => {
-    console.log("sortByVotes");
     usersByVoteCall = [...allUserIdeas];
     usersByVoteCall.sort(compareVote);
-    console.log({ usersByVoteCall });
   };
 
   const sortByCreateDate = () => {
-    console.log("sortByCreateDate");
     usersByDate = [...allUserIdeas];
     usersByDate.sort(compareDate);
-    console.log({ usersByDate });
   };
 
   const compareDate = (a, b) => {
@@ -101,34 +89,23 @@ const MyOrgIdeas = () => {
     console.log("renderIdeas");
     switch (sortOption) {
       case "createDate":
-        console.log("sort createdate");
         sortByCreateDate();
-        console.log({ userIdeasByCreateDate });
         orgIdeas = userIdeasByCreateDate.slice(
           startCount,
           startCount + limitRecords
         );
-        console.log({ orgIdeas });
-        // orgIdeas = [...usersByDate];
         break;
       case "voteCount":
-        console.log("sort votecount");
         sortByVotes();
-        console.log({ userIdeasByVoteCount });
         orgIdeas = userIdeasByVoteCount.slice(
           startCount,
           startCount + limitRecords
         );
-        console.log({ orgIdeas });
-        // orgIdeas = [...usersByVoteCall];
         break;
       default:
-        console.log("sort default");
         orgIdeas = allUserIdeas.slice(startCount, startCount + limitRecords);
-        console.log({ orgIdeas });
         break;
     }
-    console.log({ orgIdeas });
     if (Array.isArray(orgIdeas) && !orgIdeas.length) {
       return <div>No Ideas to Display</div>;
     } else {
@@ -149,20 +126,14 @@ const MyOrgIdeas = () => {
   };
 
   const moveRight = () => {
-    console.log("moveRight");
     let newStart = startCount + limitRecords;
-    console.log(allUserIdeas.length);
-    console.log(newStart + 1);
     if (allUserIdeas.length >= newStart + 1) {
       setUserRecords({ ...userRecords, startCount: startCount + limitRecords });
     }
   };
 
   const moveLeft = () => {
-    console.log("moveLeft");
     let newStart = startCount - limitRecords;
-    console.log(allUserIdeas.length);
-    console.log(newStart + 1);
     if (newStart >= 0) {
       setUserRecords({ ...userRecords, startCount: startCount - limitRecords });
     }

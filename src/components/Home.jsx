@@ -5,8 +5,6 @@ import AppContext from "../context/AppContext";
 import "./Home.css";
 
 const Home = () => {
-  console.log("HOME");
-
   const appContext = useContext(AppContext);
 
   if (appContext.userDetails.isAuthenticated) {

@@ -3,31 +3,23 @@ import "./Idea.css";
 import axios from "axios";
 
 const Idea = ({ userIdea, loggedUser }) => {
-  // console.log({ userIdea });
-  // console.log({ loggedUser });
-
   let [localVoteCount, setLocalVoteCount] = useState(userIdea.voteCount);
   let [userVoted, setUserVoted] = useState(false);
 
   useEffect(() => {
-    console.log("from useEffect");
     checkUserVoted();
   }, []);
 
   const handlePut = () => {
-    console.log("up button clicked");
     const url = `http://localhost:3004/ideas/${userIdea.id}`;
     let data = {
       ...userIdea,
       voteCount: userIdea.voteCount + 1,
       votedUsers: [...userIdea.votedUsers, loggedUser],
     };
-    console.log({ data });
     axios
       .put(url, data)
       .then((res) => {
-        console.log("success put request");
-        console.log(res.data);
         setLocalVoteCount(localVoteCount + 1);
         setUserVoted(true);
       })
@@ -38,13 +30,11 @@ const Idea = ({ userIdea, loggedUser }) => {
   };
 
   const checkUserVoted = () => {
-    console.log("checkUserVoted");
     if (Array.isArray(userIdea.votedUsers) && !userIdea.votedUsers.length) {
       console.log("empty array");
     } else {
       for (let i = 0; i < userIdea.votedUsers.length; i++) {
         if (userIdea.votedUsers[i] === loggedUser) {
-          console.log("match found for the user");
           setUserVoted(true);
           break;
         }

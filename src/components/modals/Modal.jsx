@@ -6,8 +6,6 @@ const Modal = ({ closeModal, children }) => {
   let ref = useRef(null);
 
   const handleClose = (e) => {
-    console.log("modal click", e.target);
-    console.log("ref", ref.current);
     if (ref.current.contains(e.target)) {
       //skip closing
       console.log("skip closing");

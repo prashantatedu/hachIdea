@@ -5,7 +5,6 @@ import AppContext from "../../context/AppContext";
 import axios from "axios";
 
 const NewIdea = ({ closeIdea }) => {
-  console.log("New Idea");
   const appContext = useContext(AppContext);
   let todayDate = new Date();
   let currentDate = todayDate.toISOString().split("T")[0];
@@ -21,15 +20,11 @@ const NewIdea = ({ closeIdea }) => {
 
   const handleIdea = (e) => {
     e.preventDefault();
-    console.log("handleIdea");
     let result = checkIdeas();
-    console.log({ result });
     if (!result) {
-      console.log({ ideaData });
       axios.post("http://localhost:3004/ideas/", ideaData).then((response) => {
         console.log(response.status);
         console.log(response.data);
-        console.log("Close after idea Add");
         appContext.tfDispatch({ type: "ADDNEWIDEA", userIdea: ideaData });
         closeIdea();
       });
@@ -44,17 +39,14 @@ const NewIdea = ({ closeIdea }) => {
       for (let i = 0; i < userIdeas.length; i++) {
         let obj = userIdeas[i];
         if (obj["title"] === ideaData.title) {
-          console.log("match found");
           return true;
         }
       }
-      console.log("match not found");
       return false;
     }
   };
 
   const handleCloseIdea = () => {
-    console.log("X-Clicked Idea Close");
     closeIdea();
   };
 

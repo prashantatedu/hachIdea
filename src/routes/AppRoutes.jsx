@@ -6,7 +6,6 @@ import Home from "../components/Home";
 import Dashboard from "../components/dashboard/Dashboard";
 
 const AppRoutes = () => {
-  console.log("APPROUTES");
   return (
     <>
       <Header></Header>
